@@ -1,12 +1,12 @@
-const express = require('express'),
-	  app 	  = express(),
-	  path = require('path'),
+const express    = require('express'),
+	  app 	  	 = express(),
+	  path 	  	 = require('path'),
 	  publicPath = path.join(__dirname, '../public');
 
 const port = process.env.PORT || 5000;
 
 app.use(express.static(publicPath));
-app.set("view engine", "hbs");
+// app.set("view engine", "hbs");
 
 //ROUTES
 
