@@ -1,3 +1,14 @@
 body, html {
 	font-family: Helvetica
 }
+
+ul {
+	list-style: none;
+}
+
+
+.container {
+	margin-top: 1rem;
+/* 	border: 1px solid gray;
+	border-radius: 4px; */
+}
