@@ -1,17 +1,17 @@
 var socket = io();
 
+//Connected
 socket.on('connect', function(){
-	socket.emit('createMessage', {
-		from: 'Stomach',
-		text: "Yo yo yo! When's lunch?",
-	});
+	console.log('Connected to server');
 });
 
+//Disconnected
 socket.on('disconnect', function(){
 	console.log('Disconnected to server');
 });
 
-
+//New message
 socket.on('newMessage', function(message){
 	console.log('New message', message);
 });
+
