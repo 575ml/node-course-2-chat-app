@@ -1,21 +1,28 @@
 body, html {
-	font-family: Helvetica
+	font-family: Helvetica;
+	text-align: left;
 }
 
 ul {
 	list-style: none;
+	text-align: left;
 }
 
+hr {
+	width: 95%;
+}
 
 .container {
+	padding:  40px;
 	margin-top: 1rem;
-/* 	border: 1px solid gray;
-	border-radius: 4px; */
+	border: 1px solid gray;
+	border-radius: 4px;
 }
 
 
 .btnw {
 	width: 40%;
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	margin-right: 10px;
+	/* padding-right: 10px; */
 }

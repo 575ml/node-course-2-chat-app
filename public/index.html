@@ -5,16 +5,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Chatter Box</title>
 	<link rel="stylesheet" href="stylesheets/main.css">
+	<!-- <link rel="stylesheet" href="stylesheets/styles.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
 </head>
 <body>
 	<div class="container">
 		<div class="row justify-content-center">
-			<p>Chatter Box</p>
+			<!-- <h3 class="text-center">Chatter box</h3> -->
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col-md-8">
+			<div class="col-md-6">
 				<ul id="messages"></ul>
 				<hr>
 			</div>
@@ -22,24 +25,28 @@
 
 
 		<div class="row justify-content-center">
-			<div class="col-md-8 order-md-1 newEntryForm">
+			<div class="col-md-6">
 				<form id="message-form" accept-charset="utf-8">
 				<!-- MESSAGE -->
-					<div class="col-md-10 mb-3 col align-self-center">
+					<div class="col mb-3">
 						<label for="message">Message</label>
-						<input class="form-control" type="text" name="message" placeholder="message">
+						<input class="form-control" type="text" name="message" placeholder="message" autofocus autocomplete="off">
 					</div>
 				<!-- BUTTONS -->
-              		<div class="col-md-10 mb-3 col align-self-center">
-               			<button class="btn btn-success btn-lg btnw">Send</button>
-               			<button id="send-location" class="btn btn-danger btn-lg btnw">Find me</button>
-              		</div>
-			</form>
+              		<div class="col mb-3">
+              			<div class="row justify-content-center">
+              				<button class="btn btn-primary btn-sm btnw">Send</button>
+               				<button id="send-location" class="btn btn-danger btn-sm btnw">Share my location</button>
+              			</div>
 
-		</div>
+              		</div>
+				</form>
+
+			</div>
 		</div>
 
 	</div>
+
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="/js/libs/jquery-3.3.1.min.js"></script>
 	<script src="/js/index.js"></script>
