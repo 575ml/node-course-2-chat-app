@@ -27,14 +27,15 @@ io.on('connection', (socket) => {
 	console.log("User was disconnected");
 	});
 
+	var newline = "\n"
 	//from Admin
-	socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat!'));
+	socket.emit('newMessage', generateMessage('Admin','Welcome to the chat'));
 	
 	socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
 
 	//create message
 	socket.on('createMessage', (message, callback) => {
-		console.log('createMessage', message);
+		// console.log('createMessage', message);
 		io.emit('newMessage', generateMessage(message.from, message.text));
 		callback();
 
@@ -54,5 +55,5 @@ app.get('/about', (req, res) => {
 
 //SERVER
 server.listen(port, () => {
-	console.log(`CHAT running on poty: ${port}`);
+	console.log(`DIALOGUE running on poty: ${port}`);
 });

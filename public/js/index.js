@@ -12,22 +12,25 @@ socket.on('disconnect', function(){
 
 //New message
 socket.on('newMessage', function(message){
-	console.log('New message', message);
-	var li = jQuery('<li></li>');
-	li.text(`${message.from}: ${message.text}`);
-
+	// console.log('New message', message);
+	var formattedTime = moment(message.createdAt).format('hh:mm');
+	var li = jQuery(`<li> ${formattedTime} <strong>${message.from}</strong> ${message.text}</li>`);
 	jQuery('#messages').append(li);
 });
 
 socket.on('newLocationMessage', function(message) {
-	console.log('newLocationMessage', message);
-	var li = jQuery('<li></li>');
+	var formattedTime = moment(message.createdAt).format('hh:mm');
+	// console.log('newLocationMessage', message);
+	// var strong = jQuery(`<strong></strong>`);
+	// var li = jQuery(`<li></li>`);
 	var a = jQuery('<a target="_blank">My current location</a>');
-
-	li.text(`${message.from}: `);
+	var li = jQuery(`<li> ${formattedTime} <strong>${message.from}</strong></li> `);
+	// li.text(`${formattedTime} ${message.from} `);
+	// li.text(`${formattedTime} ${message.from} `);
 	a.attr('href', message.url);
-	li.append(a);
-	jQuery('#messages').append(li);
+	// li.append(a);
+	jQuery('#messages').append(li).append(a);
+	// jQuery('#messages').append(a);
 });
 
 jQuery('#message-form').on('submit', function(e) {
