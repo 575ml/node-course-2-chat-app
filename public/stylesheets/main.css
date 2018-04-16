@@ -9,6 +9,9 @@ body, html {
 	text-align: left;
 }
 
+.userName {
+	text-transform: uppercase;
+}
 
 ul {
 	list-style: none;
