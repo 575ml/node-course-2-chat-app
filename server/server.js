@@ -17,10 +17,20 @@ app.use(express.static(publicPath));
 
 
 io.on('connection', (socket) => {
-	console.log('New user connected')
+	console.log('New user connected');
 
 	socket.on('disconnect', (socket) => {
-	console.log("User was disconnected")
+	console.log("User was disconnected");
+	});
+
+	socket.emit('newMessage', {
+		from: 'food',
+		text: "I'm not ready.",
+		createdAt:  1234
+	})
+
+	socket.on('createMessage', (newMessage) => {
+		console.log('createMessage', newMessage);
 	});
 });
 
