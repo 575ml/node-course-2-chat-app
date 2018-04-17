@@ -16,11 +16,22 @@ body, html {
 ul {
 	list-style: none;
 	text-align: left;
+	padding-left: -20px;
+	margin-left: -20px;
 	/* text-align: center; */
 }
 
 hr {
 	width: 95%;
+}
+
+.userTitle {
+	text-decoration: underline;
+}
+
+.usersList li{
+	display: inline-block;
+
 }
 
 .container {
