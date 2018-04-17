@@ -4,7 +4,7 @@ const express           = require('express'),
 	  app 	  	        = express(),
 	  path 	  	        = require('path'),
 	  publicPath        = path.join(__dirname, '../public');
-
+	  
 const {generateMessage, generateLocationMessage} = require('./utils/message');
 const {isRealString} = require('./utils/validation');
 const {Users} = require('./utils/users');
