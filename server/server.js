@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
 //ROUTES
 
 //GET index
-app.get('/about', (req, res) => {
+app.get('/', (req, res) => {
 	res.render('publicPath/index');
 });
 

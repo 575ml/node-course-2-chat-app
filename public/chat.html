@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Dialogue</title>
+	<link rel="stylesheet" href="stylesheets/main.css">
+<!-- 	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+</head>
+<body class="chatBox">
+	<div class="container">
+		<div class="row justify-content-center">
+			<h1 class="text-center">Dialogue</h1>
+			<hr>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-md-6 col-sm-12 chatter">
+				<ul id="messages"></ul>
+
+			</div>
+		</div>
+
+		<div class="row justify-content-center align-items-end">
+			<div class="col-md-6 col-sm-12">
+				<form id="message-form" accept-charset="utf-8">
+				<!-- MESSAGE -->
+					<div class="col mb-3">
+						<label for="message">Message</label>
+						<input class="form-control" type="text" name="message" placeholder="your message here" autofocus autocomplete="off">
+					</div>
+				<!-- BUTTONS -->
+              		<div class="col mb-3">
+              			<div class="row justify-content-center">
+              				<button class="btn btn-dark btn-sm btnw">Send</button>
+               				<button id="send-location" class="btn btn-secondary btn-sm btnw">Share my location</button>
+              			</div>
+
+              		</div>
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+
+	<script id="message-template" type="text/template">
+		<li class="messages">
+			<div class="userName"><strong>{{from}}</strong>
+				<small class='text-muted'>{{createdAt}}</small>
+			</div>
+			<div>
+				<p>{{text}}</p>
+			</div>
+		</li>
+	</script>
+
+		<script id="location-message-template" type="text/template">
+		<li class="messages">
+			<div class="userName"><strong>{{from}}</strong>
+				<small class='text-muted'>{{createdAt}}</small>
+			</div>
+			<div>
+				<a href="{{url}}" target="_blank">My current location</a>
+			</div>
+		</li>
+	</script>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/libs/jquery-3.3.1.min.js"></script>
+	<script src="/js/libs/moment.js"></script>
+	<script src="/js/libs/mustache.js"></script>
+	<script src="/js/chat.js"></script>
+
+</body>
+</html>
